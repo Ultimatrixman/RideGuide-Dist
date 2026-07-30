@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: In-app feedback form
+    url: https://github.com/Ultimatrixman/RideGuide-Dist
+    about: The easiest path is Settings ▸ Data & Sharing ▸ Feedback & Suggestions inside RideGuide — it fills most of this in for you.
