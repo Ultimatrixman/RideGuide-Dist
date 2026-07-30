@@ -129,6 +129,50 @@ speed that up in [Contributing game data](#contributing-game-data) below.
 - Crash reports and game-data contributions are **opt-in**, scrubbed and
   anonymized on your machine, and shared only by your hand.
 
+## System requirements
+
+The floor is deliberately low and the ceiling is real: the complete app runs
+on almost any 64-bit Windows PC, and every AI feature has a cloud or CPU path
+that needs no special hardware. Beefier hardware buys *local* AI — privacy and
+latency, not capability the cloud path lacks. All numbers below are measured,
+not guessed.
+
+| | Minimum | Recommended | Most capable |
+|---|---|---|---|
+| **CPU** | 4 cores | 8 cores / 16 threads | 8 cores / 16 threads |
+| **RAM** | 8 GB | 32 GB | 32 GB |
+| **GPU** | None beyond your game's | One 12–16 GB card | A second 12–16 GB card, or a helper PC on your LAN |
+| **Disk** | 2 GB free (SSD) | 20 GB free (NVMe) | 20 GB free (NVMe) |
+| **What you get** | The complete app — every panel, HUD, recording, analysis, the rule-based coach with voice, and cloud AI on your own accounts | Everything running locally — offline LLM coaching, neural voice, GPU speech input — engineered to yield to your game | The full local stack resident with zero game contention: the second card (or second machine) carries the AI, your game never shares |
+
+- **Minimum is the whole app, not a demo.** Telemetry, HUD overlays, session
+  recording, lap/corner analysis, strategy, tuning, the rule-based coach with
+  spoken output, tune scanning, voice input, and the phone dashboards all run
+  there — plus full AI coaching through cloud providers you already have.
+  Console players (Forza Data Out → your PC): any 8 GB office PC or laptop is
+  the entire requirement, since the PC never runs the game.
+- **What the optional local-AI features cost** (each is a separate download,
+  and each falls back gracefully if you skip it):
+
+| Optional feature | Download | Needs |
+|---|---|---|
+| Local AI model (compact) | ~3–4 GB | Runs on CPU, 8 GB RAM machines |
+| Local AI model (recommended) | ~5–6 GB | 16 GB RAM; ~7 GB VRAM if GPU-fitted |
+| Neural coach voice (R.I.D.E.) | ~2–4 GB | 3–4 GB VRAM on GPU, or CPU |
+| GPU speech-to-text | ~1.4 GB | ~1–5 GB VRAM in transient bursts (2 s vs ~13 s on CPU) |
+
+- **On one card, the game owns the GPU** — that's an engineering rule, not a
+  hope. The local model runs on CPU by default, the voice engine loads on CPU
+  while a game is running, and everything GPU-side gates itself on free VRAM
+  and steps aside under pressure.
+- **Running costs floor at $0**: fully offline with the bundled model, or
+  cloud AI routed across accounts you already own. RideGuide never requires
+  its own API key and never charges a subscription; an in-app cost panel
+  meters anything you do choose to spend.
+
+Full details — per-feature measurements, multi-GPU layout, and the
+two-machine setup — in **[SYSTEM_REQUIREMENTS.md](docs/SYSTEM_REQUIREMENTS.md)**.
+
 ---
 
 ## Downloads & updates
