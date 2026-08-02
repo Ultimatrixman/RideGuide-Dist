@@ -16,8 +16,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="assets/hero_sky.webp">
-<link rel="preload" as="image" href="assets/hero_terrain.webp">
+<link rel="preload" as="image" href="assets/splash_back.webp">
+<link rel="preload" as="image" href="assets/splash_front.webp">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
@@ -37,11 +37,9 @@
 
 <header class="hero" id="top">
   <h1 class="visually-hidden">RideGuide — telemetry and AI tuning coach for sim racing</h1>
-  <img class="hero-layer" data-par="0.04" src="assets/hero_sky.webp" alt="" width="1920" height="1280" fetchpriority="high">
-  <img class="hero-layer" data-par="0.09" src="assets/hero_sun.webp" alt="" width="1920" height="1280">
-  <img class="hero-layer" data-par="0.16" src="assets/hero_terrain.webp" alt="" width="1920" height="1280">
-  <img class="hero-layer" data-par="0.30" src="assets/hero_car.webp" alt="" width="1920" height="1280">
-  <img class="hero-title" data-par="0.50" data-fade="1" src="assets/hero_title_crop.webp" alt="RideGuide — Telemetry · AI Tuning Coach" width="1400" height="357">
+  <canvas class="hero-canvas" id="splash-canvas" aria-hidden="true"></canvas>
+  <noscript><img class="hero-canvas" src="assets/splash_flat.webp" alt="A DeLorean with neon trim on a reflective grid floor, in front of a synthwave sunset framed by a neon portal" width="960" height="640"></noscript>
+  <img class="hero-title" data-par="0.45" data-fade="1" src="assets/splash_title.webp" alt="RideGuide — Telemetry · AI Tuning Coach" width="1308" height="382" fetchpriority="high">
   <div class="hero-scrim"></div>
   <div class="hero-content">
     <p class="hero-tagline">Your AI crew chief for sim racing. Live telemetry, pro-grade analysis, and a coach that actually watches you drive — on the radio, like a real race engineer.</p>

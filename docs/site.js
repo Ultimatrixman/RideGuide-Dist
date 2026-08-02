@@ -70,6 +70,182 @@ if (!REDUCED) {
   applyParallax();
 }
 
+/* ============================== Hero splash scene ==============================
+ * Ported from the app's animated splash (rideguide/ui/splash_screen.py):
+ * back plate -> digital-sunset sun cuts -> sliding grid fan -> car plate ->
+ * KITT scanner sweep. Geometry constants come from splash_bg.json (960x640
+ * asset space); the canvas cover-fits that space to the hero. */
+
+var SPLASH = {
+  sun: { rx: 243.22, ry: 226.0, rw: 475.22, rh: 289.67, band0: 136.56, band1: 422.22 },
+  grid: { vx: 480.0, vy: 468.33, spacing: 88.0, n: 13 },
+  scanner: [[361.0, 530.5], [154.0, 510.0], [154.0, 524.0], [361.0, 544.5]],
+  SUN_HZ: 0.14, SUN_CUTS: 7, GRID_DRIFT: 0.22, SCAN_HZ: 0.7,
+};
+
+(function splashScene() {
+  var canvas = document.getElementById("splash-canvas");
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext("2d");
+
+  var sources = { back: "splash_back.webp", front: "splash_front.webp", sun: "splash_sun.webp" };
+  var el = {}, remaining = 3;
+  Object.keys(sources).forEach(function (key) {
+    var im = new Image();
+    im.onload = function () { remaining -= 1; if (!remaining) start(); };
+    im.src = "assets/" + sources[key];
+    el[key] = im;
+  });
+
+  function clampStop(grad, offset, color) {
+    grad.addColorStop(Math.max(0, Math.min(1, offset)), color);
+  }
+
+  function sunCuts(t) {
+    var g = SPLASH.sun;
+    var sy = el.sun.height / g.rh; /* sprite px per scene px */
+    var phase = (t * SPLASH.SUN_HZ) % 1;
+    var cuts = [];
+    for (var i = 0; i < SPLASH.SUN_CUTS; i++) {
+      var f = (i / SPLASH.SUN_CUTS + phase) % 1;
+      cuts.push([g.band0 + f * (g.band1 - g.band0), 2.4 + 15.0 * f]);
+    }
+    cuts.sort(function (a, b) { return a[0] - b[0]; });
+    function blit(y0, y1) {
+      if (y1 <= y0) return;
+      var srcY = (y0 - g.ry) * sy;
+      var srcH = Math.min((y1 - y0) * sy, el.sun.height - srcY);
+      if (srcH <= 0) return;
+      ctx.drawImage(el.sun, 0, srcY, el.sun.width, srcH, g.rx, y0, g.rw, y1 - y0);
+    }
+    var cur = g.ry;
+    for (i = 0; i < cuts.length; i++) {
+      blit(cur, Math.min(cuts[i][0], g.ry + g.rh));
+      cur = Math.max(cur, cuts[i][0] + cuts[i][1]);
+    }
+    blit(cur, g.ry + g.rh);
+  }
+
+  function gridFan(t) {
+    var g = SPLASH.grid;
+    var offset = (t * SPLASH.GRID_DRIFT) % 1;
+    var strokes = [[8.4, 26], [4.0, 72], [1.8, 150]];
+    for (var k = -g.n - 1; k <= g.n; k++) {
+      var kf = k + offset;
+      var fade = 1 - 0.35 * Math.min(1, Math.abs(kf) / g.n);
+      var edge = Math.max(0, Math.min(1, g.n - Math.abs(kf) + 1));
+      if (edge <= 0) continue;
+      var xBot = g.vx + kf * g.spacing;
+      for (var s = 0; s < strokes.length; s++) {
+        ctx.strokeStyle = "rgba(255,43,214," +
+          ((strokes[s][1] / 255) * fade * edge).toFixed(3) + ")";
+        ctx.lineWidth = strokes[s][0];
+        ctx.beginPath();
+        ctx.moveTo(g.vx, g.vy + 1);
+        ctx.lineTo(xBot, 648);
+        ctx.stroke();
+      }
+    }
+  }
+
+  function scanner(t) {
+    var q = SPLASH.scanner;
+    var ax = (q[0][0] + q[3][0]) / 2, ay = (q[0][1] + q[3][1]) / 2;
+    var bx = (q[1][0] + q[2][0]) / 2, by = (q[1][1] + q[2][1]) / 2;
+    var cycle = (t * SPLASH.SCAN_HZ) % 1;
+    var pos = 0.5 - 0.5 * Math.cos(2 * Math.PI * cycle);
+    var px = ax + (bx - ax) * pos, py = ay + (by - ay) * pos;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(q[0][0], q[0][1]);
+    ctx.lineTo(q[1][0], q[1][1]);
+    ctx.lineTo(q[2][0], q[2][1]);
+    ctx.lineTo(q[3][0], q[3][1]);
+    ctx.closePath();
+    ctx.clip();
+    var grad = ctx.createLinearGradient(ax, ay, bx, by);
+    clampStop(grad, pos - 0.30, "rgba(190,16,16,0)");
+    clampStop(grad, pos - 0.10, "rgba(255,60,24,0.78)");
+    clampStop(grad, pos, "rgba(255,208,150,1)");
+    clampStop(grad, pos + 0.10, "rgba(255,60,24,0.78)");
+    clampStop(grad, pos + 0.30, "rgba(190,16,16,0)");
+    ctx.fillStyle = grad;
+    ctx.fillRect(150, 504, 218, 46);
+    ctx.restore();
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    var halo = ctx.createRadialGradient(px, py, 0, px, py, 32);
+    halo.addColorStop(0, "rgba(255,42,18,0.43)");
+    halo.addColorStop(1, "rgba(255,42,18,0)");
+    ctx.fillStyle = halo;
+    ctx.beginPath();
+    ctx.arc(px, py, 32, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function draw(t) {
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    var pw = Math.round(w * dpr), ph = Math.round(h * dpr);
+    if (canvas.width !== pw || canvas.height !== ph) { canvas.width = pw; canvas.height = ph; }
+
+    var s = Math.max(w / 960, h / 640) * 1.06;
+    /* Narrow screens focus on the car's nose (RIDE grille + scanner) instead
+     * of the scene center, which would land on the windshield. */
+    var focusX = w < 640 ? 330 : 480;
+    var ox = Math.max(w - 960 * s, Math.min(0, w / 2 - focusX * s));
+    var oy = Math.max(h - 640 * s, Math.min(0, (h - 640 * s) / 2 + 0.02 * h));
+    var scroll = REDUCED ? 0 : Math.min(window.scrollY || 0, h * 1.2);
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+
+    /* far group: portal room, animated sun, grid fan */
+    ctx.setTransform(dpr * s, 0, 0, dpr * s, dpr * ox, dpr * (oy + scroll * 0.06));
+    ctx.drawImage(el.back, 0, 0, 960, 640);
+    sunCuts(t);
+    gridFan(t);
+
+    /* near group: the car, with its scanner sweep */
+    ctx.setTransform(dpr * s, 0, 0, dpr * s, dpr * ox, dpr * (oy + scroll * 0.22));
+    ctx.drawImage(el.front, 0, 0, 960, 640);
+    scanner(t);
+  }
+
+  var running = false, heroVisible = true, t0 = null;
+  function frame(now) {
+    if (t0 === null) t0 = now;
+    draw((now - t0) / 1000);
+    if (heroVisible && !document.hidden) requestAnimationFrame(frame);
+    else running = false;
+  }
+  function kick() {
+    if (!running) { running = true; requestAnimationFrame(frame); }
+  }
+
+  function start() {
+    if (REDUCED) {
+      draw(3.2);
+      window.addEventListener("resize", function () { draw(3.2); });
+      return;
+    }
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        if (heroVisible) kick();
+      }, { threshold: 0.01 }).observe(hero);
+    }
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && heroVisible) kick();
+    });
+    kick();
+  }
+})();
+
 /* ============================== Scroll reveal ============================== */
 
 var revealEls = document.querySelectorAll(".reveal");
