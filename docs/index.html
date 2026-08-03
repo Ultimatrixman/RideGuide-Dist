@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RideGuide — Your AI crew chief for sim racing</title>
+<title>RideGuide: Your AI crew chief for sim racing</title>
 <meta name="description" content="Live telemetry, pro-grade lap analysis, and an AI coach that talks to you on the radio. Forza, Assetto Corsa, ACC, BeamNG, DiRT, EA WRC. Local-first, no subscription.">
 <link rel="canonical" href="https://ultimatrixman.github.io/RideGuide-Dist/">
 <link rel="icon" href="assets/favicon.ico">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="RideGuide — Your AI crew chief for sim racing">
-<meta property="og:description" content="Live telemetry, pro-grade analysis, and a coach that actually watches you drive — talking to you on the radio like a real race engineer. Buy once, own it.">
+<meta property="og:title" content="RideGuide: Your AI crew chief for sim racing">
+<meta property="og:description" content="Live telemetry, pro-grade analysis, and a coach that actually watches you drive and talks to you on the radio like a real race engineer. Buy once, own it.">
 <meta property="og:url" content="https://ultimatrixman.github.io/RideGuide-Dist/">
 <meta property="og:image" content="https://ultimatrixman.github.io/RideGuide-Dist/assets/og_card.jpg">
 <meta property="og:image:width" content="1200">
@@ -36,15 +36,15 @@
 </nav>
 
 <header class="hero" id="top">
-  <h1 class="visually-hidden">RideGuide — telemetry and AI tuning coach for sim racing</h1>
+  <h1 class="visually-hidden">RideGuide: telemetry and AI tuning coach for sim racing</h1>
   <canvas class="hero-canvas" id="splash-canvas" aria-hidden="true"></canvas>
   <noscript><img class="hero-canvas" src="assets/splash_flat.webp" alt="A DeLorean with neon trim on a reflective grid floor, in front of a synthwave sunset framed by a neon portal" width="960" height="640"></noscript>
-  <img class="hero-title" data-par="0.45" data-fade="1" src="assets/splash_title.webp" alt="RideGuide — Telemetry · AI Tuning Coach" width="1308" height="382" fetchpriority="high">
+  <img class="hero-title" data-par="0.45" data-fade="1" src="assets/splash_title.webp" alt="RideGuide: Telemetry · AI Tuning Coach" width="1308" height="382" fetchpriority="high">
   <div class="hero-scrim"></div>
   <div class="hero-content">
-    <p class="hero-tagline">Your AI crew chief for sim racing. Live telemetry, pro-grade analysis, and a coach that actually watches you drive — on the radio, like a real race engineer.</p>
+    <p class="hero-tagline">Your AI crew chief for sim racing. Live telemetry, pro-grade analysis, and a coach that actually watches you drive and talks to you on the radio, like a real race engineer.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#download">Download Beta 0.2.3</a>
+      <a class="btn btn-primary" href="#download">Download Beta 0.2.4</a>
       <a class="btn btn-ghost" href="https://github.com/Ultimatrixman/RideGuide-Dist" rel="noopener">View on GitHub</a>
     </div>
     <p class="hero-meta"><span>Windows 10/11 · 64-bit</span><span class="sep">·</span><span>7-day full trial</span><span class="sep">·</span><span>No account, no subscription</span></p>
@@ -61,20 +61,20 @@
       <div class="feature-copy reveal">
         <p class="kicker">The AI coach</p>
         <h2>A coach in your ear, not a spreadsheet</h2>
-        <p>Every telemetry tool shows you charts. RideGuide is built around the thing the charts are <em>for</em> — getting faster — and puts a full crew on your radio while you drive:</p>
+        <p>Every telemetry tool shows you charts. RideGuide is built around the thing the charts are <em>for</em>: getting faster. It puts a full crew on your radio while you drive:</p>
         <ul>
-          <li><strong>Live coaching</strong> — braking too early, missed apexes, overheating fronts: spotted as it happens, with a fix, not a lecture. It knows when to shut up, too.</li>
+          <li><strong>Live coaching.</strong> Braking too early, missed apexes, overheating fronts: spotted as it happens, with a fix, not a lecture. It knows when to shut up, too.</li>
           <li><strong>A spotter</strong> for close racing and <strong>a race engineer</strong> for flags, fuel, tires, weather and damage.</li>
           <li><strong>Post-lap corner analysis</strong> that ranks where your time is actually going.</li>
-          <li><strong>Session debriefs, track guides and practice drills</strong> — grounded in your actual laps, never generic advice.</li>
-          <li><strong>Pick your personality</strong> — supportive mentor, blunt race engineer, rally co-driver — with full text-to-speech, team-radio effects, and push-to-talk so you can talk back.</li>
+          <li><strong>Session debriefs, track guides and practice drills</strong>, grounded in your actual laps. Never generic advice.</li>
+          <li><strong>Pick your personality</strong>: supportive mentor, blunt race engineer, rally co-driver. Full text-to-speech, team-radio effects, and push-to-talk so you can talk back.</li>
         </ul>
       </div>
       <div class="feature-media reveal">
         <div class="radio-card" id="radio">
           <div class="radio-head"><span class="live">TEAM RADIO</span><span class="radio-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
           <div id="radio-lines" aria-live="off"></div>
-          <p class="radio-note">Illustrative radio lines — the real coach grounds every call in your telemetry and your car's actual setup.</p>
+          <p class="radio-note">Illustrative radio lines. The real coach grounds every call in your telemetry and your car's actual setup.</p>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
   <div class="section-inner center">
     <p class="kicker reveal">Live telemetry</p>
     <h2 class="reveal">This is what live looks like</h2>
-    <p class="lede reveal">A dockable cockpit of 24 panels, an in-game HUD overlay suite, and phone dashboards over your LAN — all fed by the same sub-second telemetry pipeline.</p>
+    <p class="lede reveal">A dockable cockpit of 24 panels, an in-game HUD overlay suite, and phone dashboards over your LAN, all fed by the same sub-second telemetry pipeline.</p>
 
     <div class="demo-card reveal">
       <div class="demo-grid">
@@ -106,7 +106,7 @@
         </span>
         <span style="margin-left:auto">Live demo · synthetic lap · rendered with RideGuide's own gauge code</span>
       </div>
-      <noscript><p style="color:var(--text-secondary);margin:12px 0 0">The live demo needs JavaScript — everything else on this page works without it.</p></noscript>
+      <noscript><p style="color:var(--text-secondary);margin:12px 0 0">The live demo needs JavaScript; everything else on this page works without it.</p></noscript>
     </div>
 
     <div class="stats">
@@ -126,12 +126,12 @@
       <div class="feature-copy reveal">
         <p class="kicker">The cockpit</p>
         <h3>Everything is recorded, everything is live</h3>
-        <p>Sessions land in a local database automatically — compare today against last month, per car, per track. Live gauges with 19 skin styles, charts, a track map that remembers every road you've travelled, opponent timing, and a g-g diagram, in fully customizable layouts.</p>
-        <p>An optional LAN server turns a phone or tablet into a DDU, timing screen or pit wall, and feeds OBS overlays for streamers — off by default, token-protected when on.</p>
+        <p>Sessions land in a local database automatically, so you can compare today against last month, per car, per track. Live gauges with 19 skin styles, charts, a track map that remembers every road you've travelled, opponent timing, and a g-g diagram, in fully customizable layouts.</p>
+        <p>An optional LAN server turns a phone or tablet into a DDU, timing screen or pit wall, and feeds OBS overlays for streamers. Off by default, token-protected when on.</p>
       </div>
       <div class="feature-media reveal">
         <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Sessions</span></div><img src="assets/shots/sessions.webp" srcset="assets/shots/sessions_600.webp 600w, assets/shots/sessions_900.webp 900w, assets/shots/sessions.webp 1178w" sizes="(max-width: 860px) 94vw, 600px" alt="RideGuide sessions catalog: real recorded sessions grouped by game and car, with durations and frame counts" width="1178" height="758" loading="lazy"></div>
-        <p class="frame-cap">Real screenshots throughout — the developer's own sessions, captured from the live app.</p>
+        <p class="frame-cap">Real screenshots throughout: the developer's own sessions, captured from the live app.</p>
       </div>
     </div>
 
@@ -139,11 +139,11 @@
       <div class="feature-copy reveal">
         <p class="kicker">Pro-grade analysis</p>
         <h3>Find the tenths, corner by corner</h3>
-        <p>Distance-aligned lap comparison, virtual sectors, theoretical best, and live delta to your reference laps. Corner detection ranks every corner by time lost — with brake, minimum-speed and exit-speed deltas — so you know exactly what to fix first.</p>
+        <p>Distance-aligned lap comparison, virtual sectors, theoretical best, and live delta to your reference laps. Corner detection ranks every corner by time lost, with brake, minimum-speed and exit-speed deltas, so you know exactly what to fix first.</p>
         <p>Math channels with a safe expression engine, per-lap statistical reports, and export to CSV, Parquet, MoTeC <em>.ld</em> and shareable lap files when you want to go deeper.</p>
       </div>
       <div class="feature-media reveal">
-        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Corner analysis — Ferrari 488 GT3, Silverstone</span></div><img src="assets/shots/corners.webp" srcset="assets/shots/corners_600.webp 600w, assets/shots/corners_900.webp 900w, assets/shots/corners.webp 1178w" sizes="(max-width: 860px) 94vw, 600px" alt="RideGuide corner analysis ranking all 14 Silverstone corners by time lost, with minimum-speed and exit-speed deltas" width="1178" height="698" loading="lazy"></div>
+        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Corner analysis: Ferrari 488 GT3, Silverstone</span></div><img src="assets/shots/corners.webp" srcset="assets/shots/corners_600.webp 600w, assets/shots/corners_900.webp 900w, assets/shots/corners.webp 1178w" sizes="(max-width: 860px) 94vw, 600px" alt="RideGuide corner analysis ranking all 14 Silverstone corners by time lost, with minimum-speed and exit-speed deltas" width="1178" height="698" loading="lazy"></div>
       </div>
     </div>
 
@@ -151,10 +151,10 @@
       <div class="feature-copy reveal">
         <p class="kicker">Open worlds count too</p>
         <h3>A map that draws itself</h3>
-        <p>Every road you travel is remembered and drawn, colored by surface — this is one player's actual Forza Horizon world, built up drive by drive. RideGuide detects when a free-roam loop becomes a circuit and times laps geometrically, so Horizon and BeamNG get lap timing even when the game reports none.</p>
+        <p>Every road you travel is remembered and drawn, colored by surface. This is one player's actual Forza Horizon world, built up drive by drive. RideGuide detects when a free-roam loop becomes a circuit and times laps geometrically, so Horizon and BeamNG get lap timing even when the game reports none.</p>
       </div>
       <div class="feature-media reveal">
-        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Track map — travelled roads</span></div><img src="assets/shots/track_map.webp" srcset="assets/shots/track_map_600.webp 600w, assets/shots/track_map.webp 796w" sizes="(max-width: 860px) 94vw, 600px" alt="Travelled-roads map of a Forza Horizon world drawn from real drives: 92,760 road cells colored by surface type" width="796" height="732" loading="lazy"></div>
+        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Track map: travelled roads</span></div><img src="assets/shots/track_map.webp" srcset="assets/shots/track_map_600.webp 600w, assets/shots/track_map.webp 796w" sizes="(max-width: 860px) 94vw, 600px" alt="Travelled-roads map of a Forza Horizon world drawn from real drives: 92,760 road cells colored by surface type" width="796" height="732" loading="lazy"></div>
       </div>
     </div>
 
@@ -162,11 +162,11 @@
       <div class="feature-copy reveal">
         <p class="kicker">Tuning &amp; setup</p>
         <h3>A garage that reads the game</h3>
-        <p>RideGuide captures your tuning sheets and upgrade catalogs straight off the screen — per car, per game, no manual data entry. Native setup files for the sims that have them, and two-way digital tuning in BeamNG.</p>
-        <p>Describe the symptom — <em>“understeer on corner exit”</em> — and the setup engineer proposes ranked changes grounded in your car's real slider ranges, then lets lap-attributed A/B validation prove whether the change was actually faster.</p>
+        <p>RideGuide captures your tuning sheets and upgrade catalogs straight off the screen: per car, per game, no manual data entry. Native setup files for the sims that have them, and two-way digital tuning in BeamNG.</p>
+        <p>Describe a symptom like <em>“understeer on corner exit”</em> and the setup engineer proposes ranked changes grounded in your car's real slider ranges, then lets lap-attributed A/B validation prove whether the change was actually faster.</p>
       </div>
       <div class="feature-media reveal">
-        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Garage — Alfa Romeo 33 Stradale</span></div><img src="assets/shots/garage.webp" srcset="assets/shots/garage_600.webp 600w, assets/shots/garage_900.webp 900w, assets/shots/garage.webp 1428w" sizes="(max-width: 860px) 94vw, 600px" alt="RideGuide garage with a scanned tune (tire pressures, gearing ratios with slider ranges) and an 11-category scanned parts catalog" width="1428" height="537" loading="lazy"></div>
+        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Garage: Alfa Romeo 33 Stradale</span></div><img src="assets/shots/garage.webp" srcset="assets/shots/garage_600.webp 600w, assets/shots/garage_900.webp 900w, assets/shots/garage.webp 1428w" sizes="(max-width: 860px) 94vw, 600px" alt="RideGuide garage with a scanned tune (tire pressures, gearing ratios with slider ranges) and an 11-category scanned parts catalog" width="1428" height="537" loading="lazy"></div>
       </div>
     </div>
 
@@ -179,7 +179,7 @@
       </div>
       <div class="feature-media reveal">
         <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>AI coach chat</span></div><img src="assets/shots/coach_chat.webp" srcset="assets/shots/coach_chat_600.webp 600w, assets/shots/coach_chat.webp 796w" sizes="(max-width: 860px) 94vw, 600px" alt="RideGuide coach chat, Comprehensive mode: a progress review of the Lotus Exos 125 at Red Bull Ring with per-sector time deltas, skill scores rising 73 to 84, and a concrete next-session plan" width="796" height="772" loading="lazy"></div>
-        <p class="frame-cap">An unscripted Comprehensive-mode answer about real sessions, generated through the developer's own Claude account — sector deltas, habit trends and skill scores straight from the recorded laps.</p>
+        <p class="frame-cap">An unscripted Comprehensive-mode answer about real sessions, generated through the developer's own Claude account: sector deltas, habit trends and skill scores straight from the recorded laps.</p>
       </div>
     </div>
 
@@ -190,12 +190,12 @@
 <section class="section section-alt" id="ai">
   <div class="section-inner center">
     <p class="kicker reveal">Your AI, your rules</p>
-    <h2 class="reveal">Bring your own AI — or none at all</h2>
+    <h2 class="reveal">Bring your own AI, or none at all</h2>
     <p class="lede reveal">RideGuide never resells AI access. There is no subscription because there is nothing to subscribe to.</p>
     <div class="byo">
       <div class="byo-card reveal">
         <h3>Fully offline</h3>
-        <p>A bundled local model runs coaching, debriefs and chat with zero internet and zero accounts. Runs on CPU by default — your game keeps the GPU.</p>
+        <p>A bundled local model runs coaching, debriefs and chat with zero internet and zero accounts. Runs on CPU by default, so your game keeps the GPU.</p>
       </div>
       <div class="byo-card reveal">
         <h3>Connect what you already have</h3>
@@ -203,7 +203,7 @@
       </div>
       <div class="byo-card reveal">
         <h3>See every penny</h3>
-        <p>An in-app cost panel meters anything you choose to spend, per feature. Running costs floor at $0 — cloud on accounts you already own, or fully local.</p>
+        <p>An in-app cost panel meters anything you choose to spend, per feature. Running costs floor at $0: cloud on accounts you already own, or fully local.</p>
       </div>
     </div>
   </div>
@@ -214,12 +214,12 @@
   <div class="section-inner center">
     <p class="kicker reveal">Supported games</p>
     <h2 class="reveal">Live-verified, not spec-sheet promises</h2>
-    <p class="lede reveal">Seven titles carry the verified badge — tested end-to-end against the real game. More earn it as they're confirmed.</p>
+    <p class="lede reveal">Seven titles carry the verified badge, tested end-to-end against the real game. More earn it as they're confirmed.</p>
     <div class="games-grid">
-      <div class="game-card reveal"><span><b>Forza Motorsport &amp; Horizon</b><small>UDP “Data Out” — works from console to PC</small></span><span class="badge">VERIFIED</span></div>
+      <div class="game-card reveal"><span><b>Forza Motorsport &amp; Horizon</b><small>UDP “Data Out”, works from console to PC</small></span><span class="badge">VERIFIED</span></div>
       <div class="game-card reveal"><span><b>Assetto Corsa</b><small>UDP + shared memory, opponent radar via plugin</small></span><span class="badge">VERIFIED</span></div>
       <div class="game-card reveal"><span><b>Assetto Corsa Competizione</b><small>Shared memory + broadcasting grid</small></span><span class="badge">VERIFIED</span></div>
-      <div class="game-card reveal"><span><b>BeamNG.drive</b><small>Dedicated mod — deep integration, two-way tuning</small></span><span class="badge">VERIFIED</span></div>
+      <div class="game-card reveal"><span><b>BeamNG.drive</b><small>Dedicated mod with deep integration and two-way tuning</small></span><span class="badge">VERIFIED</span></div>
       <div class="game-card reveal"><span><b>DiRT Rally</b><small>UDP</small></span><span class="badge">VERIFIED</span></div>
       <div class="game-card reveal"><span><b>DiRT 4</b><small>UDP</small></span><span class="badge">VERIFIED</span></div>
       <div class="game-card reveal"><span><b>EA SPORTS WRC</b><small>UDP</small></span><span class="badge">VERIFIED</span></div>
@@ -234,7 +234,7 @@
       <span class="chip">Automobilista 2</span>
       <span class="chip">RaceRoom</span>
     </div>
-    <p class="games-note reveal">You can help verify the game you play — opt-in game-data contributions are scrubbed and anonymized on your machine, and nothing leaves your PC without your explicit consent.</p>
+    <p class="games-note reveal">You can help verify the game you play: opt-in game-data contributions are scrubbed and anonymized on your machine, and nothing leaves your PC without your explicit consent.</p>
   </div>
 </section>
 
@@ -244,9 +244,9 @@
     <p class="kicker reveal">Private by design</p>
     <h2 class="reveal">Yours. Actually yours.</h2>
     <div class="own-grid">
-      <div class="own-card reveal"><div class="ic">🔑</div><h3>Buy once, own it</h3><p>No subscription, no account. Licence keys verify offline — no activation server, no phone-home, yours forever.</p></div>
+      <div class="own-card reveal"><div class="ic">🔑</div><h3>Buy once, own it</h3><p>No subscription, no account. Licence keys verify offline: no activation server, no phone-home, yours forever.</p></div>
       <div class="own-card reveal"><div class="ic">💾</div><h3>Local-first data</h3><p>Telemetry, laps, tunes and coaching history live on your disk, in open formats. Export anytime.</p></div>
-      <div class="own-card reveal"><div class="ic">🛜</div><h3>Quiet by default</h3><p>No analytics. The only network calls are ones you set up — your own AI providers — or explicitly click.</p></div>
+      <div class="own-card reveal"><div class="ic">🛜</div><h3>Quiet by default</h3><p>No analytics. The only network calls are ones you set up yourself, like your own AI providers, or explicitly click.</p></div>
       <div class="own-card reveal"><div class="ic">🎮</div><h3>The game owns the GPU</h3><p>Every local-AI component yields to your game by engineering rule, not hope. CPU by default, VRAM-gated always.</p></div>
     </div>
   </div>
@@ -257,7 +257,7 @@
   <div class="section-inner center">
     <p class="kicker reveal">System requirements</p>
     <h2 class="reveal">The floor is deliberately low</h2>
-    <p class="lede reveal">Minimum is the whole app, not a demo — every panel, HUD, recording, analysis, the rule-based coach with voice, and cloud AI on your own accounts. Beefier hardware buys <em>local</em> AI: privacy and latency, not missing features.</p>
+    <p class="lede reveal">Minimum is the whole app, not a demo: every panel, HUD, recording, analysis, the rule-based coach with voice, and cloud AI on your own accounts. Beefier hardware buys <em>local</em> AI: privacy and latency, not missing features.</p>
     <div class="req-table-wrap reveal">
       <table class="req">
         <thead><tr><th scope="col"></th><th scope="col">Minimum</th><th scope="col">Recommended</th></tr></thead>
@@ -270,7 +270,7 @@
         </tbody>
       </table>
     </div>
-    <p class="req-note reveal">Playing on console? Point Forza's “Data Out” at any 8 GB office PC or laptop — the PC never runs the game, so Minimum is the entire requirement. Full measured details in the <a href="https://github.com/Ultimatrixman/RideGuide-Dist/blob/main/docs/SYSTEM_REQUIREMENTS.md" rel="noopener">system requirements document</a>.</p>
+    <p class="req-note reveal">Playing on console? Point Forza's “Data Out” at any 8 GB office PC or laptop. The PC never runs the game, so Minimum is the entire requirement. Full measured details in the <a href="https://github.com/Ultimatrixman/RideGuide-Dist/blob/main/docs/SYSTEM_REQUIREMENTS.md" rel="noopener">system requirements document</a>.</p>
   </div>
 </section>
 
@@ -278,21 +278,21 @@
 <section class="section" id="download">
   <div class="section-inner">
     <div class="dl-card reveal">
-      <p class="dl-version">BETA 0.2.3 · PUBLIC BETA</p>
+      <p class="dl-version">BETA 0.2.4 · PUBLIC BETA</p>
       <h2>Take your crew chief for a spin</h2>
-      <p class="lede" style="margin-left:auto;margin-right:auto">Every game and every feature unlocked for 7 days — no account, no card, no strings.</p>
+      <p class="lede" style="margin-left:auto;margin-right:auto">Every game and every feature unlocked for 7 days. No account, no card, no strings.</p>
       <div class="dl-cta">
-        <a class="btn btn-primary" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/download/v0.2.3/RideGuide-Setup-0.2.3.exe" rel="noopener">⬇ Download for Windows</a>
-        <a class="btn btn-ghost" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/tag/v0.2.3" rel="noopener">Release notes</a>
+        <a class="btn btn-primary" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/download/v0.2.4/RideGuide-Setup-0.2.4.exe" rel="noopener">⬇ Download for Windows</a>
+        <a class="btn btn-ghost" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/tag/v0.2.4" rel="noopener">Release notes</a>
       </div>
       <p class="dl-facts"><span>Windows 10/11 · 64-bit</span><span class="sep">·</span><span>448 MB installer</span><span class="sep">·</span><span>optional AI downloads picked per feature</span></p>
       <details class="sha">
-        <summary>Verify your download — file checksum (SHA-256)</summary>
-        <p class="sha-note">A checksum is a public fingerprint of the installer file — it is not a licence key or a secret. After downloading, run <code>certutil -hashfile RideGuide-Setup-0.2.3.exe SHA256</code> in a terminal and compare: a match proves your download arrived intact and untampered.</p>
-        <code class="sha-hash">d846ec2b341676382bc9bda8a5089ea898ac880b4b5912410dd72976aeaeb29f</code>
+        <summary>Verify your download: file checksum (SHA-256)</summary>
+        <p class="sha-note">A checksum is a public fingerprint of the installer file, not a licence key or a secret. After downloading, run <code>certutil -hashfile RideGuide-Setup-0.2.4.exe SHA256</code> in a terminal and compare: a match proves your download arrived intact and untampered.</p>
+        <code class="sha-hash">88ab43082478f22f7e3b5ab5e4f2806862ea604309441a841aa3140ab62104b6</code>
       </details>
       <p class="dl-small"><strong>A note on SmartScreen:</strong> early builds are unsigned, so Windows may warn on first run (“More info” → “Run anyway”). This clears as the app builds download reputation.</p>
-      <p class="dl-small">After the trial, RideGuide is <strong>buy-once, own-forever</strong> — a licence key with game slots you assign to the titles you play, verified fully offline. Pricing details are coming soon.</p>
+      <p class="dl-small">After the trial, RideGuide is <strong>buy-once, own-forever</strong>: a licence key with game slots you assign to the titles you play, verified fully offline. Pricing details are coming soon.</p>
       <p class="dl-small"><strong>Want to keep going after the trial?</strong> While RideGuide is in beta, email <a href="mailto:rideguide.contact@gmail.com">rideguide.contact@gmail.com</a> and I'll set you up with a beta licence key.</p>
     </div>
   </div>
