@@ -44,7 +44,7 @@
   <div class="hero-content">
     <p class="hero-tagline">Your AI crew chief for sim racing. Live telemetry, pro-grade analysis, and a coach that actually watches you drive and talks to you on the radio, like a real race engineer.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#download">Download Beta 0.2.11</a>
+      <a class="btn btn-primary" href="#download">Download Beta 0.2.12</a>
       <a class="btn btn-ghost" href="https://github.com/Ultimatrixman/RideGuide-Dist" rel="noopener">View on GitHub</a>
     </div>
     <p class="hero-meta"><span>Windows 10/11 · 64-bit</span><span class="sep">·</span><span>7-day full trial</span><span class="sep">·</span><span>No account, no subscription</span></p>
@@ -63,9 +63,9 @@
         <h2>A coach in your ear, not a spreadsheet</h2>
         <p>Every telemetry tool shows you charts. RideGuide is built around the thing the charts are <em>for</em>: getting faster. It puts a full crew on your radio while you drive:</p>
         <ul>
-          <li><strong>Live coaching.</strong> Braking too early, missed apexes, overheating fronts: spotted as it happens, with a fix, not a lecture. It knows when to shut up, too.</li>
+          <li><strong>Live coaching.</strong> Braking too early, missed apexes, overheating fronts: spotted as it happens, with the fix first and the reason after, if there is even time for one. It cuts its own calls short when you are busy, and praise has to be earned.</li>
           <li><strong>A spotter</strong> for close racing and <strong>a race engineer</strong> for flags, fuel, tires, weather and damage.</li>
-          <li><strong>Post-lap corner analysis</strong> that ranks where your time is actually going.</li>
+          <li><strong>Post-lap corner analysis</strong> that ranks where your time is actually going, plus a word on the straight afterwards about what to attack next lap. When you go quicker it tells you why, not just by how much.</li>
           <li><strong>Session debriefs, track guides and practice drills</strong>, grounded in your actual laps. Never generic advice.</li>
           <li><strong>Pick your personality</strong>: supportive mentor, blunt race engineer, rally co-driver. Full text-to-speech, team-radio effects, and push-to-talk so you can talk back.</li>
         </ul>
@@ -139,7 +139,8 @@
       <div class="feature-copy reveal">
         <p class="kicker">Pro-grade analysis</p>
         <h3>Find the tenths, corner by corner</h3>
-        <p>Distance-aligned lap comparison, virtual sectors, theoretical best, and live delta to your reference laps. Corner detection ranks every corner by time lost, with brake, minimum-speed and exit-speed deltas, so you know exactly what to fix first.</p>
+        <p>Distance-aligned lap comparison, virtual sectors, theoretical best, and live delta to your reference laps. Corner detection ranks every corner by time lost, with brake point, entry, minimum and exit speed, steering, your line against the reference, and weight transfer. Hover a corner on the map to see what went wrong there and what to do about it, or lay a reference lap over your own to see where your line differs.</p>
+        <p>When your own quickest lap is not much of a target, comparing against it teaches you nothing. So RideGuide keeps your best ever result for every individual corner, stitches your best sectors into a composite lap, and works out what a corner should take from its radius and the grip your car has actually shown. That last one is a measured target rather than a physics model, and it stays quiet until it has watched enough cornering to mean anything.</p>
         <p>Math channels with a safe expression engine, per-lap statistical reports, and export to CSV, Parquet, MoTeC <em>.ld</em> and shareable lap files when you want to go deeper.</p>
       </div>
       <div class="feature-media reveal">
@@ -278,18 +279,18 @@
 <section class="section" id="download">
   <div class="section-inner">
     <div class="dl-card reveal">
-      <p class="dl-version">BETA 0.2.11 · PUBLIC BETA</p>
+      <p class="dl-version">BETA 0.2.12 · PUBLIC BETA</p>
       <h2>Take your crew chief for a spin</h2>
       <p class="lede" style="margin-left:auto;margin-right:auto">Every game and every feature unlocked for 7 days. No account, no card, no strings.</p>
       <div class="dl-cta">
-        <a class="btn btn-primary" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/download/v0.2.11/RideGuide-Setup-0.2.11.exe" rel="noopener">⬇ Download for Windows</a>
-        <a class="btn btn-ghost" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/tag/v0.2.11" rel="noopener">Release notes</a>
+        <a class="btn btn-primary" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/download/v0.2.12/RideGuide-Setup-0.2.12.exe" rel="noopener">⬇ Download for Windows</a>
+        <a class="btn btn-ghost" href="https://github.com/Ultimatrixman/RideGuide-Dist/releases/tag/v0.2.12" rel="noopener">Release notes</a>
       </div>
-      <p class="dl-facts"><span>Windows 10/11 · 64-bit</span><span class="sep">·</span><span>448 MB installer</span><span class="sep">·</span><span>optional AI downloads picked per feature</span></p>
+      <p class="dl-facts"><span>Windows 10/11 · 64-bit</span><span class="sep">·</span><span>449 MB installer</span><span class="sep">·</span><span>optional AI downloads picked per feature</span></p>
       <details class="sha">
         <summary>Verify your download: file checksum (SHA-256)</summary>
-        <p class="sha-note">A checksum is a public fingerprint of the installer file, not a licence key or a secret. After downloading, run <code>certutil -hashfile RideGuide-Setup-0.2.11.exe SHA256</code> in a terminal and compare: a match proves your download arrived intact and untampered.</p>
-        <code class="sha-hash">360472962e8e58d31416614e9ad5da4bc5f969bae31fa17644335dae779434ef</code>
+        <p class="sha-note">A checksum is a public fingerprint of the installer file, not a licence key or a secret. After downloading, run <code>certutil -hashfile RideGuide-Setup-0.2.12.exe SHA256</code> in a terminal and compare: a match proves your download arrived intact and untampered.</p>
+        <code class="sha-hash">3eee4a5bac7c4e6617e248380c1e3eb88eb12b03e9ab516f660c5f6868cb3dd0</code>
       </details>
       <p class="dl-small"><strong>A note on SmartScreen:</strong> early builds are unsigned, so Windows may warn on first run (“More info” → “Run anyway”). This clears as the app builds download reputation.</p>
       <p class="dl-small">After the trial, RideGuide is <strong>buy-once, own-forever</strong>: a licence key with game slots you assign to the titles you play, verified fully offline. Pricing details are coming soon.</p>
